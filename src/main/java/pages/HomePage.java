@@ -8,13 +8,14 @@ public class HomePage extends BasePage {
 
     public HomePage(WebDriver driver) {
         super(driver);
-        this.strst = strst;
     }
 
     @FindBy(xpath = "strsts" )
-    private WebElement strst;
+    private WebElement strsts;
 
     public void openHomePage(String url) {
         driver.get(url);
     }
+
+
 }

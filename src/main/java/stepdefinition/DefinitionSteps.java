@@ -9,6 +9,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 
+import java.time.Duration;
+
 import static io.github.bonigarcia.wdm.WebDriverManager.chromedriver;
 
 public class DefinitionSteps {
@@ -36,14 +38,11 @@ public class DefinitionSteps {
         homePage.openHomePage(url);
     }
 
-    @Given("User opens {string} page")
-    public void userOpensHomePagePage() {
-    }
-
     @And("User checks whether {string} is written in the header of the site")
     public void checkHeader() {
-        homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
-    }
+      homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+
+}
     @After
     public void tearDown() {
         driver.close();
