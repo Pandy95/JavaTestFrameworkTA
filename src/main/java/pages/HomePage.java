@@ -10,8 +10,8 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "strsts" )
-    private WebElement strsts;
+    @FindBy(xpath = "//div[@class='page-header__HeaderTitle-qbclzk-3 jOZkgn']" )
+    private WebElement header;
 
     public void openHomePage(String url) {
         driver.get(url);
