@@ -5,6 +5,7 @@ Feature: Smoke
 
   Scenario Outline: Check if the element "cropp" is visible
     Given User opens '<homePage>' page
+    And User checks whether "cropp" is written in the header of the site
 
     Examples:
       |homePage|

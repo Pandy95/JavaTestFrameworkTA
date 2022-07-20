@@ -40,10 +40,13 @@ public class DefinitionSteps {
     public void userOpensHomePagePage() {
     }
 
+    @And("User checks whether {string} is written in the header of the site")
+    public void checkHeader() {
+        homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
+    }
     @After
     public void tearDown() {
         driver.close();
     }
-
 
 }
