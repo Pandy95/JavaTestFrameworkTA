@@ -6,11 +6,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage {
 
-    public HomePage(WebDriver driver, WebElement strst) {
+    public HomePage(WebDriver driver) {
         super(driver);
         this.strst = strst;
     }
 
     @FindBy(xpath = "strsts" )
     private WebElement strst;
+
+    public void openHomePage(String url) {
+        driver.get(url);
+    }
 }
