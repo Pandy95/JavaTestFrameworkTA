@@ -20,9 +20,7 @@ public class DefinitionSteps {
     private static final long DEFAULT_TIMEOUT = 60;
 
     WebDriver driver;
-
     HomePage homePage;
-
     PageFactoryManager pageFactoryManager;
 
     @Before
@@ -33,21 +31,20 @@ public class DefinitionSteps {
         pageFactoryManager = new PageFactoryManager(driver);
     }
 
-    @Given("User opens {string}")
-    public void openPage(final String url){
+    @Given("User opens {string} page")
+    public void userOpenPage(final String url) {
         homePage = pageFactoryManager.getHomePage();
-        homePage.openHomePage(url);
+        homePage.openHomePage(url);                     
     }
 
     @Then("User checks whether {string} is written in the header of the site")
-    public void checkHeader() {
+    public void userChecksHeader() {
         homePage.waitForPageLoadComplete(DEFAULT_TIMEOUT);
         homePage.isRightHeaderVisible();
+    }
 
-}
     @After
     public void tearDown() {
         driver.close();
     }
-
 }
