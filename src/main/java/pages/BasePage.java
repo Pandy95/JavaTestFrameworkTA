@@ -18,6 +18,4 @@ public class BasePage {
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
-    public void isRightHeaderVisible() {
-    }
 }
