@@ -12,13 +12,13 @@ public interface IProduct {
 
     default List<WebElement> getAllProductPrice(){return null;}
 
-    default List<Product> getProductsList(List<WebElement> listName, List<WebElement> listPrice){
+    default List<Product> getProductsList(List<WebElement> listName, List<WebElement> listPrice) {
         List<Product> productList = new ArrayList<>();
-        for (int i = 0; i < listName.size(); i++){
+        for (int i = 0; i < listName.size(); i++) {
             Product temp = new Product();
             temp.setName(listName.get(i).getText());
             temp.setPrice(Integer.parseInt((listPrice.get(i)
-                    .getText().replaceAll( "", "")
+                    .getText().replaceAll(" ", "")
                     .split("U", 2)[0])));
             productList.add(temp);
         }
