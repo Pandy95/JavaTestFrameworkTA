@@ -2,6 +2,7 @@ package manager;
 
 import org.openqa.selenium.WebDriver;
 import pages.AllManShoesPage;
+import pages.AllStoresPage;
 import pages.HomePage;
 
 public class PageFactoryManager {
@@ -13,5 +14,9 @@ public class PageFactoryManager {
 
     public AllManShoesPage getAllMenShoesPage(){
         return new AllManShoesPage(driver);
+    }
+
+    public AllStoresPage getAllStoresPage(){
+        return new AllStoresPage(driver);
     }
 }

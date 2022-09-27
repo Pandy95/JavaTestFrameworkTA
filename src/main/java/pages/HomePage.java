@@ -28,6 +28,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//header/div/div/ul/li/ul/div/a[@href='https://www.cropp.com/ua/uk/vzuttia/cholovikam']")
     private WebElement tabShoesAllMen;
 
+    @FindBy(xpath = "//span[@data-testid='store-switcher']")
+    private WebElement languageButton;
+
     public void openHomePage(String url) {
         driver.get(url);
     }
@@ -44,5 +47,9 @@ public class HomePage extends BasePage {
     }
     public void clickOnShoesAllMen(){
         tabShoesAllMen.click();
+    }
+
+    public void changeLanguage(){
+        languageButton.click();
     }
 }
