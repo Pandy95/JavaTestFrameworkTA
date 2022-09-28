@@ -46,7 +46,7 @@ public class DefinitionSteps {
     @Given("User opens {string} page")
     public void userOpenPage(final String url) {
         homePage = pageFactoryManager.getHomePage();
-        homePage.openHomePage(url);                     
+        homePage.openHomePage(url);
     }
 
     @After
@@ -60,7 +60,8 @@ public class DefinitionSteps {
     }
 
     @When("User moves a cursor to the tab menu Shoes")
-    public void userMovesACursorToTheTabMenuShoes() {
+    public void userMovesACursorToTheTabMenuShoes() throws InterruptedException {
+        Thread.sleep(1000);
         homePage.moveToElement();
     }
 
