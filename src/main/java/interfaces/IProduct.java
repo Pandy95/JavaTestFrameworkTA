@@ -16,10 +16,8 @@ public interface IProduct {
         List<Product> productList = new ArrayList<>();
         for (int i = 0; i < listName.size(); i++) {
             Product temp = new Product();
-            temp.setName(listName.get(i).getText());
-            temp.setPrice(Integer.parseInt((listPrice.get(i)
-                    .getText().replaceAll(" ", "")
-                    .split("U", 2)[0])));
+            temp.setName(listName.get(i));
+            temp.setPrice(listPrice.get(i));
             productList.add(temp);
         }
         return productList;

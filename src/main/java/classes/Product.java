@@ -1,5 +1,7 @@
 package classes;
 
+import org.openqa.selenium.WebElement;
+
 public class Product {
 
     private String name;
@@ -19,9 +21,13 @@ public class Product {
     public String getName(){
         return name;
     }
-    public void setName(String name){
-        this.name = name;
+    public void setName(WebElement name){
+        this.name = name.getText();
     }
     public Integer getPrice(){return price;}
-    public void setPrice(int price){this.price = price;}
+    public void setPrice(WebElement price) {
+        this.price = Integer.parseInt(price.getText()
+                .replaceAll(" ", "")
+                .split("U", 2)[0]);
+    }
 }
